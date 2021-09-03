@@ -34,9 +34,10 @@
     <!--Content-->
     <main>
         <div class="container">
-            <h1 class="text-center">Tabelul cu angajati</h1>
+            <h1 class="text-center" style="font-weight:bold">Tabelul cu angajati</h1>
         </div>
 
+        <!--Table-->
         <div class="row justify-content-center">
             <div class="col-auto">
                 <table class="table table-bordered border-dark">
@@ -64,12 +65,47 @@
             </div>
         </div>
 
+        <!--Input form-->
+        <form>
+            <div class="mb-3">
+                <label for="last-name-input" class="form-label">Nume</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Pacurar">
+            </div>
+    
+            <div class="mb-3">
+                <label for="first-name-input" class="form-label">Prenume</label>
+                <input type="text" class="form-control" id="first-name" placeholder="Patrick">
+            </div>
+    
+            <div class="mb-3">
+                <label for="email-input" class="form-label">Adresa e-mail</label>
+                <input type="email" class="form-control" id="email-input" placeholder="name@example.com">
+            </div>
+            
+            <div class="mb-3">
+                <label for="sex-input" class="form-label">Sex</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="" selected disabled>Selectati sexul</option>
+                    <option value="1">Barbat</option>
+                    <option value="2">Femeie</option>
+                    <option value="3">Altul</option>
+                </select>
+            </div>
 
-        <div>
-            <form>
-                
-            </form>
-        </div>
+            <div class="mb-3">
+                <label for="birthdate-input" class="form-label">Data nasterii</label>
+                <input type="date" class="form-control" id="birthdate-input" placeholder="">
+            </div>
+    
+            <div class="mb-3">
+                <label for="picture" class="form-label">Adauga poza</label>
+                <input class="form-control" type="file" id="picture">
+              </div>
+    
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Adauga angajat</button>
+              </div>
+        </form>
     </main>
 
     <!--Footer-->
