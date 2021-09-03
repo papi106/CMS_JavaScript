@@ -7,7 +7,7 @@ body {
 
 header {
   width: 100%;
-  height: 50px;
+  height: 55px;
   background-color: #142850;
 }
 
@@ -46,4 +46,13 @@ li a:hover {
   background-color: whitesmoke;
   color: black;
   border-radius: 4px;
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  font-family: "Lato", sans-serif;
 }

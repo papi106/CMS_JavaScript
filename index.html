@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--Google Fonts => Lato-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,37 +31,48 @@
     <!--Content-->
     <main>
         <div>
-            <h1>Tabelul cu angajati</h1>
+            <h1 class="main">Tabelul cu angajati</h1>
+        </div>
+
+        <div class="col-lg-auto">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry the Bird</td>
+                    <td>Test</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>            
         </div>
 
         <div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>head1</th>
-                        <th>head2</th>
-                        <th>head3</th>
-                        <th>head4</th>
-                        <th>head5</th>
-                        <th>head6</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                    <td>cell1_1</td><td>cell2_1</td><td>cell3_1</td><td>cell4_1</td><td>cell5_1</td><td>cell6_1</td></tr>
-                    <tr>
-                    <td>cell1_2</td><td>cell2_2</td><td>cell3_2</td><td>cell4_2</td><td>cell5_2</td><td>cell6_2</td></tr>
-                    <tr>
-                    <td>cell1_3</td><td>cell2_3</td><td>cell3_3</td><td>cell4_3</td><td>cell5_3</td><td>cell6_3</td></tr>
-                    <tr>
-                    <td>cell1_4</td><td>cell2_4</td><td>cell3_4</td><td>cell4_4</td><td>cell5_4</td><td>cell6_4</td></tr>
-                </tbody>
-            </table>
+            <form>
+                
+            </form>
         </div>
     </main>
-
-
 
     <!--Footer-->
 </body>
