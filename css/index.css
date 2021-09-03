@@ -76,6 +76,10 @@ table th {
   color: white;
 }
 
+.stergere:hover {
+  cursor: pointer;
+}
+
 #modalButton {
   float: right;
   margin-right: 45%;
