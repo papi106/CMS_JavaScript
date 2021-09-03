@@ -11,15 +11,24 @@ header {
   background-color: #142850;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 .navlogo {
+  padding: 0.3rem;
+  margin-left: 2%;
+  margin-top: 4px;
+  display: flex;
   color: whitesmoke;
   font-size: 26px;
   font-family: "Lato", sans-serif;
-  position: absolute;
-  padding: 0.3rem;
-  float: left;
-  margin-left: 2%;
-  margin-top: 5px;
+}
+
+.navitems {
+  display: flex;
+  margin-right: 2%;
 }
 
 .logo,
@@ -66,7 +75,7 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
   margin: auto;
-  width: 85% !important;
+  width: 90% !important;
   font-family: "Lato", sans-serif;
   text-align: center;
 }
@@ -74,6 +83,7 @@ table {
 table th {
   font-size: 18px;
   color: white;
+  vertical-align: middle;
 }
 
 .stergere:hover {
@@ -85,4 +95,14 @@ table th {
   margin-right: 45%;
   margin-top: 2%;
   margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 835px) {
+  header {
+    height: fit-content;
+  }
+
+  .nav {
+    justify-content: center;
+  }
 }
