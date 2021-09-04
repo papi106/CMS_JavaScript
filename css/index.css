@@ -112,6 +112,11 @@ table th {
   margin-bottom: 0.5rem;
 }
 
+#search-employee {
+  min-width: 240px;
+  margin-left: 8.5%;
+}
+
 .sorter,
 .search-bar {
   display: flex;
@@ -119,7 +124,17 @@ table th {
 }
 
 .form-group {
-  min-width: 150px;
+  min-width: 120px;
+  margin-right: 2%;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.filter {
+  display: flex;
+  margin-left: 17.5%;
+  margin-bottom: 0.5rem;
 }
 
 @media only screen and (max-width: 835px) {
@@ -135,5 +150,18 @@ table th {
 @media only screen and (max-width: 910px) {
   .search-sort {
     flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 200px;
+  }
+
+  .form-group {
+    margin-bottom: 5%;
   }
 }
