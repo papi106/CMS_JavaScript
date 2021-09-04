@@ -75,13 +75,14 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
   margin: auto;
-  width: 85% !important;
+  width: 75% !important;
   font-family: "Lato", sans-serif;
   text-align: center;
 }
 
 table th {
   font-size: 18px;
+  max-width: 50px;
   color: white;
   vertical-align: middle;
 }
@@ -100,7 +101,26 @@ table th {
 .input-group {
   display: flex;
   justify-content: center;
-  margin-bottom: 2%;
+  max-width: 200px;
+}
+
+.filter-sorter {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 12.5%;
+  margin-left: 12.5%;
+  margin-bottom: 0.5rem;
+}
+
+.sorter,
+.filter,
+.search-bar {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  min-width: 150px;
 }
 
 @media only screen and (max-width: 835px) {
@@ -110,5 +130,11 @@ table th {
 
   .nav {
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 910px) {
+  .filter-sorter {
+    flex-direction: column;
   }
 }

@@ -43,17 +43,44 @@
             <h1 class="text-center" style="font-weight:bold">Tabelul cu angajati</h1>
         </div>
 
-        <div class="input-group">
-            <div class="form-outline">
-              <input type="search" id="form1" class="form-control" placeholder="Cauta angajat ..."/>
+
+
+        <!--Filter + Sort-->
+        <div class="filter-sorter">
+            <div class="sorter">
+                <select class="form-group" aria-label="Default select example">
+                    <option value="" selected>Sorteaza ...</option>
+                    <option value="1">Alfabetic A-Z</option>
+                    <option value="2">Alfabetic Z-A</option>
+                    <option value="3">Data nasterii 0-100</option>
+                    <option value="4">Data nasterii 100-0</option>
+                </select>
+                <button type="button" class="btn" style="background-color: #27496D; color:white;">Sorteaza</button>
             </div>
-            <button type="button" class="btn" style="background-color: #27496D; color:white;">
-              Cauta
-            </button>
-          </div>
+
+            <!--Search bar-->
+            <div class="search-bar">
+                <div class="input-group">
+                    <div class="form-outline">
+                        <input type="search" id="search-employee" class="form-control" placeholder="Cauta angajat ..."/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter">
+                <select class="form-group" aria-label="Default select example">
+                    <option value="" selected>Filtreaza ...</option>
+                    <option value="1">Sex</option>
+                    <option value="2">Data nasterii</option>
+                    <option value="3">Poza</option>
+                </select>
+                <button type="button" class="btn" style="background-color: #27496D; color:white;">Filtreaza</button>
+            </div>
+        </div>
+
 
         <!--Table-->
-        <div class="row justify-content-center">
+        <div>
             <div class="table-responsive">
                 <table class="table table-bordered border-dark">
                     <thead style="background-color: #27496D;">
