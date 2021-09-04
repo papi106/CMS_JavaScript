@@ -75,7 +75,7 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
   margin: auto;
-  width: 75% !important;
+  width: 65% !important;
   font-family: "Lato", sans-serif;
   text-align: center;
 }
@@ -104,16 +104,15 @@ table th {
   max-width: 200px;
 }
 
-.filter-sorter {
+.search-sort {
   display: flex;
   justify-content: space-between;
-  margin-right: 12.5%;
-  margin-left: 12.5%;
+  margin-right: 17.5%;
+  margin-left: 17.5%;
   margin-bottom: 0.5rem;
 }
 
 .sorter,
-.filter,
 .search-bar {
   display: flex;
   margin-bottom: 0.5rem;
@@ -134,11 +133,7 @@ table th {
 }
 
 @media only screen and (max-width: 910px) {
-  .filter-sorter {
+  .search-sort {
     flex-direction: column;
-  }
-
-  .search-bar {
-    order: 1;
   }
 }

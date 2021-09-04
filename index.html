@@ -45,18 +45,8 @@
 
 
 
-        <!--Filter + Sort-->
-        <div class="filter-sorter">
-            <div class="sorter">
-                <select class="form-group" aria-label="Default select example">
-                    <option value="" selected>Sorteaza ...</option>
-                    <option value="1">Alfabetic A-Z</option>
-                    <option value="2">Alfabetic Z-A</option>
-                    <option value="3">Data nasterii 0-100</option>
-                    <option value="4">Data nasterii 100-0</option>
-                </select>
-                <button type="button" class="btn" style="background-color: #27496D; color:white;">Sorteaza</button>
-            </div>
+        <!--Sort + Search bar-->
+        <div class="search-sort">
 
             <!--Search bar-->
             <div class="search-bar">
@@ -66,15 +56,17 @@
                     </div>
                 </div>
             </div>
-
-            <div class="filter">
+            
+            <!--Sort-->
+            <div class="sorter">
                 <select class="form-group" aria-label="Default select example">
-                    <option value="" selected>Filtreaza ...</option>
-                    <option value="1">Sex</option>
-                    <option value="2">Data nasterii</option>
-                    <option value="3">Poza</option>
+                    <option value="" selected>Sorteaza ...</option>
+                    <option value="1">Alfabetic - A-Z</option>
+                    <option value="2">Alfabetic - Z-A</option>
+                    <option value="3">Data nasterii - crescator</option>
+                    <option value="4">Data nasterii - descrescator</option>
                 </select>
-                <button type="button" class="btn" style="background-color: #27496D; color:white;">Filtreaza</button>
+                <button type="button" class="btn" style="background-color: #27496D; color:white;">Sorteaza</button>
             </div>
         </div>
 
@@ -85,13 +77,13 @@
                 <table class="table table-bordered border-dark">
                     <thead style="background-color: #27496D;">
                       <tr>
-                        <th>Poza</th>
+                        <th style="width:25%">Poza</th>
                         <th style="width:15%">Nume</th>
                         <th style="width:15%">Prenume</th>
-                        <th style="width:20%">Email</th>
-                        <th style="width:8%">Sex</th>
+                        <th style="width:25%">Email</th>
+                        <th style="width:9%">Sex</th>
                         <th style="width:15%">Data nasterii</th>
-                        <th style="width:6%">Sterge</th>
+                        <th style="width:8%">Sterge</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -100,7 +92,7 @@
                         <td>Pacurar</td>
                         <td>Patrick</td>
                         <td>patrickpacurar@yahoo.com</td>
-                        <td>Barbat</td>
+                        <td>Masculin</td>
                         <td>27 Iulie 1997</td>
                         <td class="stergere"><img src="/images/trash.svg"></td>
                       </tr>
@@ -149,8 +141,8 @@
                                 <label for="sex-input" class="form-label">Sex</label>
                                 <select class="form-select" aria-label="Default select example">
                                     <option value="" selected disabled>Selectati sexul</option>
-                                    <option value="1">Barbat</option>
-                                    <option value="2">Femeie</option>
+                                    <option value="1">Masculin</option>
+                                    <option value="2">Feminin</option>
                                     <option value="3">Altul</option>
                                 </select>
                             </div>
