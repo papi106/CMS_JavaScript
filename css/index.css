@@ -137,4 +137,8 @@ table th {
   .filter-sorter {
     flex-direction: column;
   }
+
+  .search-bar {
+    order: 1;
+  }
 }
