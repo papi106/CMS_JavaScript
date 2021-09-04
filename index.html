@@ -120,42 +120,41 @@
         </div>
 
         <!--Input form for adding employee-->
+
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-dark" id="modalButton" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn" style="background-color: #27496D; color:white;" id="modalButton" data-bs-toggle="modal" data-bs-target="#myModal">
             Adauga angajat
         </button>
         
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter">
+        <div class="modal fade" id="myModal">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Adauga un angajat !</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Adauga un angajat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
 
                         <form>
-                            <div class="form-group">
-                                <label for="last-name-input" class="form-label">Nume</label>
+                            <div class="mb-3">
+                                <label for="last-name-input" class="form-label required">Nume</label>
                                 <input type="text" class="form-control" id="last-name" placeholder="Introdu numele">
                             </div>
                     
                             <div class="mb-3">
-                                <label for="first-name-input" class="form-label">Prenume</label>
+                                <label for="first-name-input" class="form-label required">Prenume</label>
                                 <input type="text" class="form-control" id="first-name" placeholder="Introdu prenumele">
                             </div>
                     
                             <div class="mb-3">
-                                <label for="email-input" class="form-label">Adresa e-mail</label>
+                                <label for="email-input" class="form-label required">Adresa e-mail</label>
                                 <input type="email" class="form-control" id="email-input" placeholder="name@example.com">
                             </div>
                             
                             <div class="mb-3">
-                                <label for="sex-input" class="form-label">Sex</label>
+                                <label for="sex-input" class="form-label required">Sex</label>
                                 <select class="form-select" aria-label="Default select example">
                                     <option value="" selected disabled>Selectati sexul</option>
                                     <option value="1">Masculin</option>
@@ -165,7 +164,7 @@
                             </div>
                 
                             <div class="mb-3">
-                                <label for="birthdate-input" class="form-label">Data nasterii</label>
+                                <label for="birthdate-input" class="form-label required">Data nasterii</label>
                                 <input type="date" class="form-control" id="birthdate-input" placeholder="">
                             </div>
                     
@@ -173,17 +172,13 @@
                                 <label for="picture" class="form-label">Adauga poza</label>
                                 <input class="form-control" type="file" id="picture">
                             </div>
-                    
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary mb-3">Adauga angajat</button>
-                            </div>
 
                         </form>
                     </div>
                     
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Inchide</button>
-                        <button type="submit" class="btn btn-primary" id="add-employee-button">Adauga angajat</button>
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Renunta</button>
+                        <button type="submit" class="btn" style="background-color:#27496D; color:white;" id="add-employee-button">Adauga angajat</button>
                     </div>
                 </div>
             </div>
