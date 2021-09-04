@@ -3,8 +3,18 @@ window.onload = () =>{
 
     document.getElementById("add-employee-button").addEventListener("click", AddEmployee, false);
 
-    localStorage.setItem('employees', JSON.stringify([]));
-    localStorage.setItem('employeeNextId', JSON.stringify(0));
+    currentEmployees = JSON.parse(localStorage.getItem('employees'));
+    if (currentEmployees == undefined)
+    {
+        localStorage.setItem('employees', JSON.stringify([]));
+        localStorage.setItem('employeeNextId', JSON.stringify(0));
+    }
+    else
+    {
+        currentEmployees.forEach(e => {
+            AppendTable(e);
+        });
+    }
 }
 
 function AppendTable(employee) {
