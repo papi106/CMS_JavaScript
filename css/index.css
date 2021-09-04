@@ -75,7 +75,7 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
   margin: auto;
-  width: 90% !important;
+  width: 85% !important;
   font-family: "Lato", sans-serif;
   text-align: center;
 }
@@ -95,6 +95,12 @@ table th {
   margin-right: 45%;
   margin-top: 2%;
   margin-bottom: 5%;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
 }
 
 @media only screen and (max-width: 835px) {
