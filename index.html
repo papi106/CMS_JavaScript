@@ -57,7 +57,7 @@
             
             <!--Sort-->
             <div class="sorter">
-                <select class="form-group" aria-label="Default select example">
+                <select class="form-group">
                     <option value="" selected>Sorteaza ...</option>
                     <option value="1">Alfabetic - A-Z</option>
                     <option value="2">Alfabetic - Z-A</option>
@@ -70,20 +70,20 @@
 
         <!--Filter buttons-->
         <div class="filter">
-            <select class="form-group" aria-label="Default select example">
+            <select class="form-group">
                 <option value="" selected>Sex</option>
                 <option value="1">Masculin</option>
                 <option value="2">Feimnin</option>
                 <option value="3">Altul</option>
             </select>
 
-            <select class="form-group" aria-label="Default select example">
+            <select class="form-group">
                 <option value="" selected>Poza</option>
                 <option value="1">Are poza</option>
                 <option value="2">Nu are poza</option>
             </select>
 
-            <select class="form-group" aria-label="Default select example">
+            <select class="form-group">
                 <option value="" selected>Data nasterii</option>
                 <option value="1">Perioada</option>
             </select>
@@ -94,7 +94,6 @@
             <div class="table-responsive">
                 <table class="table table-bordered border-dark">
                     <thead style="background-color: #27496D;">
-                      <tr>
                         <th style="width:25%">Poza</th>
                         <th style="width:15%">Nume</th>
                         <th style="width:15%">Prenume</th>
@@ -102,18 +101,9 @@
                         <th style="width:9%">Sex</th>
                         <th style="width:15%">Data nasterii</th>
                         <th style="width:8%">Sterge</th>
-                      </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>test-poza</td>
-                        <td>Pacurar</td>
-                        <td>Patrick</td>
-                        <td>patrickpacurar@yahoo.com</td>
-                        <td>Masculin</td>
-                        <td>27 Iulie 1997</td>
-                        <td class="stergere"><img src="/images/trash.svg"></td>
-                      </tr>
+                    <tbody id="table-employees">
+
                     </tbody>
                   </table>            
             </div>
@@ -132,7 +122,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Adauga un angajat</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
                     <div class="modal-body">
@@ -178,7 +168,9 @@
                     
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Renunta</button>
-                        <button type="submit" class="btn" style="background-color:#27496D; color:white;" id="add-employee-button">Adauga angajat</button>
+                        <button type="submit" class="btn" style="background-color:#27496D; color:white;" id="add-employee-button" data-bs-dismiss="modal">
+                            Adauga angajat
+                        </button>
                     </div>
                 </div>
             </div>
