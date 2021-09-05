@@ -4,7 +4,7 @@ window.onload = () =>{
     document.getElementById("add-employee-button").addEventListener("click", AddEmployee, false);
 
     currentEmployees = JSON.parse(localStorage.getItem('employees'));
-    
+
     if (currentEmployees == undefined)
     {
         localStorage.setItem('employees', JSON.stringify([]));
@@ -65,10 +65,20 @@ function Employee(employeeId, lastName, firstName, email, gender, birthDate, pic
     this.picture= picture;
 }
 
-
 //Email validation function
 function emailValidation(email) {
     var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
     return regex.test(email);
 }
 
+//Getting age from birthdate function
+function getAge(birthDate) {
+    var birthDate = new Date(birthDate);
+    var diff = Date.now() - birthDate.getTime();
+    var ageDayTime = new Date(diff);
+    var year = ageDayTime.getFullYear();
+    var age = Math.abs(year - 1970);
+
+    return age;
+}
