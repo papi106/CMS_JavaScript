@@ -27,7 +27,7 @@ function AppendTable(employee) {
     <td>${employee.email}</td>
     <td>${employee.gender}</td>
     <td>${employee.birthDate}</td>
-    <td class="stergere"><img src="/images/trash.svg"></td>
+    <td class="stergere" onClick="deleteEmployee(this)"><img src="/images/trash.svg"></td>
     </tr>`
     console.log(employee);
     document.getElementById("table-employees").innerHTML += tableContent;
@@ -81,4 +81,22 @@ function getAge(birthDate) {
     var age = Math.abs(year - 1970);
 
     return age;
+}
+
+//Delete employee function
+function deleteEmployee(td) {
+    if (confirm('Are you sure to delete this employee ?')) {
+
+    } 
+}
+
+//Validation function
+function validate() {
+    var valid = true;
+
+    if (lastName == null || lastName == "") {
+        valid = false;
+        errors.push('Last name must not be empty.')
+    }
+        
 }
