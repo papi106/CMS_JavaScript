@@ -96,7 +96,38 @@ function validate() {
 
     if (lastName == null || lastName == "") {
         valid = false;
-        errors.push('Last name must not be empty.')
+        errors.push('Last name must not be empty.');
     }
-        
+
+    if (firstName == null || firstName == "") {
+        valid = false;
+        errors.push('First name must not be empty.');
+    }
+
+    if (firstName == null || firstName == "") {
+        valid = false;
+        errors.push('Email must not be empty.');
+    } else if (!emailValidation(email)) {
+        valid = false;
+        errors.push('Email must be in a correct format.');
+    }
+
+    if (sex == null || sex == "") {
+        valid = false;
+        errors.push('Gender must be selected.');
+    }
+
+    if (birthDate == null) {
+        valid = false;
+        errors.push('You must enter your birthdate.');
+    } else {
+        if (age <= 16) {
+            valid = false;
+            errors.push('You must be over 16 years old.');
+        }
+        const normalBirthdate = moment (birthDate);
+        birthDate.textContent = normalBirthdate.format('D MMM YYY');
+    } 
+
+    return valid;
 }
