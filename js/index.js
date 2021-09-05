@@ -4,6 +4,7 @@ window.onload = () =>{
     document.getElementById("add-employee-button").addEventListener("click", AddEmployee, false);
 
     currentEmployees = JSON.parse(localStorage.getItem('employees'));
+    
     if (currentEmployees == undefined)
     {
         localStorage.setItem('employees', JSON.stringify([]));
@@ -17,6 +18,7 @@ window.onload = () =>{
     }
 }
 
+//Put employee in table
 function AppendTable(employee) {
     tableContent = `<tr employee-id=${employee.employeeId}>
     <td>${employee.picture}</td>
@@ -31,6 +33,7 @@ function AppendTable(employee) {
     document.getElementById("table-employees").innerHTML += tableContent;
 }
 
+//Get employee in local storage
 function AddEmployee() {
     lastName = document.getElementById("last-name").value;
     firstName = document.getElementById("first-name").value;
@@ -38,7 +41,6 @@ function AddEmployee() {
     gender = document.getElementById("gender-input").value;
     birthDate = document.getElementById("birthdate-input").value;
     picture = document.getElementById("picture-input").value;
-
 
     employeeId = JSON.parse(localStorage.getItem('employeeNextId'));
     allEmployees =  JSON.parse(localStorage.getItem('employees'));
@@ -52,6 +54,7 @@ function AddEmployee() {
     AppendTable(newEmployee);
 }
 
+//Employee constructor
 function Employee(employeeId, lastName, firstName, email, gender, birthDate, picture) {
     this.employeeId = employeeId;
     this.lastName = lastName;
@@ -61,3 +64,11 @@ function Employee(employeeId, lastName, firstName, email, gender, birthDate, pic
     this.gender = gender;
     this.picture= picture;
 }
+
+
+//Email validation function
+function emailValidation(email) {
+    var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    return regex.test(email);
+}
+
