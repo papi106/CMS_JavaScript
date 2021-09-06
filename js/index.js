@@ -147,7 +147,7 @@ function validate(lastName, firstName, email, sex, birthDate) {
         return false;
     } else {
 
-        const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/g;
         if (!regex.test(email)) {
             alert('Email is invalid.');
             return false;
