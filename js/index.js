@@ -30,7 +30,7 @@ window.onload = () =>{
 //Put employee in table
 function AppendTable(employee) {
     tableContent = `<tr employee-id=${employee.employeeId}>
-    <td>${employee.picture}</td>
+    <td class ="picture"></td>
     <td>${employee.lastName}</td>
     <td>${employee.firstName}</td>
     <td>${employee.email}</td>
@@ -172,6 +172,7 @@ function validate(lastName, firstName, email, sex, birthDate) {
     return true;
 }
 
+//Clear modal after adding new employee
 function clearModal() {
     document.getElementById("last-name").value = '';
     document.getElementById("first-name").value = '';
@@ -238,7 +239,7 @@ function sortAgeDescending(a, b) {
       return 0;
 }
 
-//
+//This function uses a switch to call the functions and show the sort result
 function sortTable() {
     allEmployees = JSON.parse(localStorage.getItem('employees'));
 
@@ -285,3 +286,5 @@ function searchEmployee() {
         }
     }
 }
+
+//Uploading the picture

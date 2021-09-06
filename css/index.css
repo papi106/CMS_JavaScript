@@ -75,7 +75,7 @@ table {
   table-layout: fixed;
   word-wrap: break-word;
   margin: auto;
-  width: 65% !important;
+  width: 80% !important;
   font-family: "Lato", sans-serif;
   text-align: center;
 }
@@ -110,14 +110,9 @@ td {
 .search-sort {
   display: flex;
   justify-content: space-between;
-  margin-right: 17.5%;
-  margin-left: 17.5%;
+  margin-right: 10.5%;
+  margin-left: 10.5%;
   margin-bottom: 0.5rem;
-}
-
-#search-employee {
-  min-width: 240px;
-  margin-left: 8.5%;
 }
 
 .sorter,
@@ -135,8 +130,14 @@ td {
 
 .filter {
   display: flex;
-  margin-left: 17.5%;
+  margin-left: 10.5%;
   margin-bottom: 0.5rem;
+}
+
+.picture {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
 }
 
 @media only screen and (max-width: 835px) {
@@ -149,13 +150,13 @@ td {
   }
 }
 
-@media only screen and (max-width: 910px) {
+@media only screen and (max-width: 650px) {
   .search-sort {
     flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 550px) {
   .filter {
     display: flex;
     flex-direction: column;
