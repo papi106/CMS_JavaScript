@@ -127,7 +127,6 @@ td {
 }
 
 .form-group {
-  min-width: 120px;
   margin-right: 2%;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
