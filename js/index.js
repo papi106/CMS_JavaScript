@@ -22,6 +22,8 @@ window.onload = () =>{
             AppendTable(e);
         });
     }
+
+    deleteEmployee();
 }
 
 //Put employee in table
@@ -33,7 +35,7 @@ function AppendTable(employee) {
     <td>${employee.email}</td>
     <td>${employee.gender}</td>
     <td>${employee.birthDate}</td>
-    <td class="stergere" onClick="deleteEmployee(this)"><img src="/images/trash.svg"></td>
+    <td class="stergere"><img src="/images/trash.svg"></td>
     </tr>`
     console.log(employee);
     document.getElementById("table-employees").innerHTML += tableContent;
@@ -71,19 +73,44 @@ function Employee(employeeId, lastName, firstName, email, gender, birthDate, pic
     this.picture= picture;
 }
 
+ //Open modal function
 function openModal() {
     document.getElementById('myModal').style = "display:block";
     document.getElementById('myModal').classList.add("show");
 }
 
+//Close modal function
 function closeModal() {
     document.getElementById('myModal').style = "display:none";
     document.getElementById('myModal').classList.remove("show");
 }
 
+//Closing modal at outside click function
 window.onclick = function(event) {
     if (event.target == document.getElementById('myModal')) {
       closeModal();
+    }
+}
+
+//Delete event set on click
+function deleteEmployee() {
+    document.querySelectorAll(".stergere").forEach(e => {
+        e.addEventListener("click", deleteEmployeeRow, false);
+    });
+}
+
+//Delete employee function
+function deleteEmployeeRow(htmlDeleteElement) {
+    if (confirm('Are you sure to delete this employee ?')) {
+        rowToBeDeleted = htmlDeleteElement.target.closest("tr");
+
+        employeeToDeleteId = rowToBeDeleted.getAttribute("employee-id");
+        rowToBeDeleted.remove();
+
+        allEmployees = JSON.parse(localStorage.getItem(employees));
+        allEmployees = allEmployees.filter(e => e.employeeId != employeeToDeleteId);
+
+        localStorage.setItem(employees, JSON.stringify(allEmployees));
     }
 }
 
@@ -96,13 +123,6 @@ function getAge(dateStr) {
     age = Math.abs(year - 1970);
 
     return age >= 16;
-}
-
-//Delete employee function
-function deleteEmployee(td) {
-    if (confirm('Are you sure to delete this employee ?')) {
-
-    } 
 }
 
 //Validation function
