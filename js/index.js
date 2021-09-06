@@ -23,6 +23,8 @@ window.onload = () =>{
     }
 
     setDelete();
+
+    setSort();
 }
 
 //Put employee in table
@@ -178,3 +180,89 @@ function clearModal() {
     document.getElementById("birthdate-input").value = '';
     document.getElementById("picture-input").value = '';
 }
+
+//Sorting functionality
+
+//Set the sorting function
+function setSort() {
+    document.getElementById("sortButton").addEventListener("click", sortTable, false);
+}
+
+//Sort by name ascendent function
+function sortNameAscending(a, b) {
+    if ((a.lastName + a.firstName) < (b.lastName + b.firstName)){
+        return -1;
+      }
+      if ((a.lastName + a.firstName) > (b.lastName + b.firstName)){
+        return 1;
+      }
+      return 0;
+}
+
+//Sort by name descendent function
+function sortNameDescending(a, b) {
+    if ((a.lastName + a.firstName) < (b.lastName + b.firstName)){
+        return 1;
+      }
+      if ((a.lastName + a.firstName) > (b.lastName + b.firstName)){
+        return -1;
+      }
+      return 0;
+}
+
+//Sort by age ascendent function
+function sortAgeAscending(a, b) {
+    ageA = parseInt(moment(a.birthDate).fromNow().split(' ')[0]);
+    ageB = parseInt(moment(b.birthDate).fromNow().split(' ')[0]);
+    
+    if (ageA < ageB){
+        return -1;
+      }
+      if (ageA > ageB){
+        return 1;
+      }
+      return 0;
+}
+
+//Sort by age descendent function
+function sortAgeDescending(a, b) {
+    ageA = parseInt(moment(a.birthDate).fromNow().split(' ')[0]);
+    ageB = parseInt(moment(b.birthDate).fromNow().split(' ')[0]);
+    
+    if (ageA < ageB){
+        return 1;
+      }
+      if (ageA > ageB){
+        return -1;
+      }
+      return 0;
+}
+
+//
+function sortTable() {
+    allEmployees = JSON.parse(localStorage.getItem('employees'));
+
+    sortBy = document.getElementById('sortBy').value;
+
+    switch (sortBy) {
+        case '1':
+            allEmployees.sort(sortNameAscending);
+            break;
+        case '2':
+            allEmployees.sort(sortNameDescending);
+            break;
+        case '3':
+            allEmployees.sort(sortAgeAscending);
+            break;
+        case '4':
+            allEmployees.sort(sortAgeDescending);
+            break;
+    }
+    document.getElementById("table-employees").innerHTML = '';
+
+    allEmployees.forEach(e => {
+        AppendTable(e);
+    });
+}
+
+
