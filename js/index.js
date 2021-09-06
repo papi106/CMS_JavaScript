@@ -87,22 +87,15 @@ window.onclick = function(event) {
     }
 }
 
-//Email validation function
-function emailValidation(email) {
-    var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+//Getting age and validation of 16+ from birthdate function
+function getAge(dateStr) {
+    birthDate = new Date(dateStr);
+    diff = Date.now() - birthDate.getTime();
+    ageDayTime = new Date(diff);
+    year = ageDayTime.getFullYear();
+    age = Math.abs(year - 1970);
 
-    return regex.test(email);
-}
-
-//Getting age from birthdate function
-function getAge(birthDate) {
-    var birthDate = new Date(birthDate);
-    var diff = Date.now() - birthDate.getTime();
-    var ageDayTime = new Date(diff);
-    var year = ageDayTime.getFullYear();
-    var age = Math.abs(year - 1970);
-
-    return age;
+    return age >= 16;
 }
 
 //Delete employee function
@@ -113,43 +106,42 @@ function deleteEmployee(td) {
 }
 
 //Validation function
-function validate() {
-    var valid = true;
+function validate(lastName, firstName, email, sex, birthDate) {
 
     if (lastName == null || lastName == "") {
-        valid = false;
-        errors.push('Last name must not be empty.');
+        alert('Last name must not be empty.');
+        return false;
     }
 
     if (firstName == null || firstName == "") {
-        valid = false;
-        errors.push('First name must not be empty.');
+        alert('First name must not be empty.');
+        return false;
     }
 
-    if (firstName == null || firstName == "") {
-        valid = false;
-        errors.push('Email must not be empty.');
-    } else if (!emailValidation(email)) {
-        valid = false;
-        errors.push('Email must be in a correct format.');
+    if (email == null || email == "") {
+        alert('Email must not be empty.');
+        return false;
+    } else {
+
+        const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        if (!regex.test(email)) {
+            alert('Email is invalid.');
+            return false;
+        }
     }
 
     if (sex == null || sex == "") {
-        valid = false;
-        errors.push('Gender must be selected.');
+        alert('Gender must be selected.');
+        return false;
     }
 
     if (birthDate == null) {
-        valid = false;
-        errors.push('You must enter your birthdate.');
-    } else {
-        if (age <= 16) {
-            valid = false;
-            errors.push('You must be over 16 years old.');
-        }
-        const normalBirthdate = moment (birthDate);
-        birthDate.textContent = normalBirthdate.format('D MMM YYY');
+        alert('You must enter your birthdate.');
+        return false;
+    } else if (!getAge(birthDate)) {
+        alert('You must have at least 16 years old.');
+        return false;
     } 
 
-    return valid;
+    return true;
 }
