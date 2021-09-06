@@ -106,7 +106,6 @@
                         <th style="width:8%">Sterge</th>
                     </thead>
                     <tbody id="table-employees">
-
                     </tbody>
                   </table>            
             </div>
@@ -125,30 +124,30 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Adauga un angajat</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <button type="button" class="btn-close close-myModal" data-bs-dismiss="modal"></button>
                     </div>
 
                     <div class="modal-body">
 
                         <form>
                             <div class="mb-3">
-                                <label for="last-name" class="form-label required">Nume</label>
-                                <input type="text" class="form-control" id="last-name" placeholder="Introdu numele">
+                                <label for="last-name" class="form-label">Nume</label>
+                                <input type="text" class="form-control" id="last-name" placeholder="Introdu numele" required>
                             </div>
                     
                             <div class="mb-3">
-                                <label for="first-name" class="form-label required">Prenume</label>
-                                <input type="text" class="form-control" id="first-name" placeholder="Introdu prenumele">
+                                <label for="first-name" class="form-label">Prenume</label>
+                                <input type="text" class="form-control" id="first-name" placeholder="Introdu prenumele" required>
                             </div>
                     
                             <div class="mb-3">
-                                <label for="email-input" class="form-label required">Adresa e-mail</label>
-                                <input type="email" class="form-control" id="email-input" placeholder="name@example.com">
+                                <label for="email-input" class="form-label">Adresa e-mail</label>
+                                <input type="email" class="form-control" id="email-input" placeholder="name@example.com" required>
                             </div>
                             
                             <div class="mb-3">
-                                <label for="gender-input" class="form-label required">Sex</label>
-                                <select class="form-select" id="gender-input">
+                                <label for="gender-input" class="form-label">Sex</label>
+                                <select class="form-select" id="gender-input" required>
                                     <option value="" selected disabled>Selectati sexul</option>
                                     <option value="Masculin">Masculin</option>
                                     <option value="Feminin">Feminin</option>
@@ -157,8 +156,8 @@
                             </div>
                 
                             <div class="mb-3">
-                                <label for="birthdate-input" class="form-label required">Data nasterii</label>
-                                <input type="date" class="form-control" id="birthdate-input" placeholder="">
+                                <label for="birthdate-input" class="form-label">Data nasterii</label>
+                                <input type="date" class="form-control" id="birthdate-input" placeholder="" required>
                             </div>
                     
                             <div class="mb-3">
@@ -170,7 +169,7 @@
                     </div>
                     
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Renunta</button>
+                        <button type="submit" class="btn btn-secondary close-myModal" data-bs-dismiss="modal">Renunta</button>
                         <button type="submit" class="btn" style="background-color:#27496D; color:white;" id="add-employee-button" data-bs-dismiss="modal">
                             Adauga angajat
                         </button>

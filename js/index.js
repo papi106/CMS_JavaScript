@@ -3,6 +3,12 @@ window.onload = () =>{
 
     document.getElementById("add-employee-button").addEventListener("click", AddEmployee, false);
 
+    document.getElementById("modalButton").addEventListener("click", openModal, false);
+
+    document.querySelectorAll(".close-myModal").forEach(e =>{
+        e.addEventListener("click", closeModal, false);
+    });
+
     currentEmployees = JSON.parse(localStorage.getItem('employees'));
 
     if (currentEmployees == undefined)
@@ -63,6 +69,22 @@ function Employee(employeeId, lastName, firstName, email, gender, birthDate, pic
     this.birthDate = birthDate;
     this.gender = gender;
     this.picture= picture;
+}
+
+function openModal() {
+    document.getElementById('myModal').style = "display:block";
+    document.getElementById('myModal').classList.add("show");
+}
+
+function closeModal() {
+    document.getElementById('myModal').style = "display:none";
+    document.getElementById('myModal').classList.remove("show");
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('myModal')) {
+      closeModal();
+    }
 }
 
 //Email validation function

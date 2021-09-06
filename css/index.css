@@ -101,11 +101,6 @@ td {
   margin-bottom: 5%;
 }
 
-.required:after {
-  content: "*";
-  color: red;
-}
-
 .input-group {
   display: flex;
   justify-content: center;
