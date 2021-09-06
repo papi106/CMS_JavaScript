@@ -30,7 +30,7 @@ window.onload = () =>{
 //Put employee in table
 function AppendTable(employee) {
     tableContent = `<tr employee-id=${employee.employeeId}>
-    <td></td>
+    <td class="picture"><img src="/images/picture.png" height=80></td>
     <td>${employee.lastName}</td>
     <td>${employee.firstName}</td>
     <td>${employee.email}</td>
@@ -276,6 +276,18 @@ function searchEmployee() {
 
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+    }
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
