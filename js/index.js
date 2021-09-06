@@ -22,7 +22,7 @@ window.onload = () =>{
         });
     }
 
-    deleteEmployee();
+    setDelete();
 }
 
 //Put employee in table
@@ -49,17 +49,23 @@ function AddEmployee() {
     birthDate = document.getElementById("birthdate-input").value;
     picture = document.getElementById("picture-input").value;
 
-    employeeId = JSON.parse(localStorage.getItem('employeeNextId'));
-    allEmployees =  JSON.parse(localStorage.getItem('employees'));
+    validateForm = validate(lastName, firstName, email, gender, birthDate);
 
-    newEmployee = new Employee(employeeId++, lastName, firstName, email, gender, birthDate, picture);
-    allEmployees.push(newEmployee);
-
-    localStorage.setItem('employeeNextId', JSON.stringify(employeeId));
-    localStorage.setItem('employees', JSON.stringify(allEmployees));
-
-    AppendTable(newEmployee);
-    deleteEmployee();
+    if(validateForm) {
+        employeeId = JSON.parse(localStorage.getItem('employeeNextId'));
+        allEmployees =  JSON.parse(localStorage.getItem('employees'));
+    
+        newEmployee = new Employee(employeeId++, lastName, firstName, email, gender, birthDate, picture);
+        allEmployees.push(newEmployee);
+    
+        localStorage.setItem('employeeNextId', JSON.stringify(employeeId));
+        localStorage.setItem('employees', JSON.stringify(allEmployees));
+    
+        AppendTable(newEmployee);
+        setDelete();
+        closeModal();
+        clearModal();
+    }
 }
 
 //Employee constructor
@@ -93,7 +99,7 @@ window.onclick = function(event) {
 }
 
 //Delete event set on click
-function deleteEmployee() {
+function setDelete() {
     document.querySelectorAll(".stergere").forEach(e => {
         e.addEventListener("click", deleteEmployeeRow, false);
     });
@@ -103,24 +109,22 @@ function deleteEmployee() {
 function deleteEmployeeRow(htmlDeleteElement) {
     if (confirm('Are you sure to delete this employee ?')) {
         rowToBeDeleted = htmlDeleteElement.target.closest("tr");
-
         employeeToDeleteId = rowToBeDeleted.getAttribute("employee-id");
+
         rowToBeDeleted.remove();
 
-        allEmployees = JSON.parse(localStorage.getItem(employees));
+        allEmployees = JSON.parse(localStorage.getItem('employees'));
         allEmployees = allEmployees.filter(e => e.employeeId != employeeToDeleteId);
 
-        localStorage.setItem(employees, JSON.stringify(allEmployees));
+        localStorage.setItem('employees', JSON.stringify(allEmployees));
     }
 }
 
 //Getting age and validation of 16+ from birthdate function
-function getAge(dateStr) {
-    birthDate = new Date(dateStr);
-    diff = Date.now() - birthDate.getTime();
-    ageDayTime = new Date(diff);
-    year = ageDayTime.getFullYear();
-    age = Math.abs(year - 1970);
+function getAge() {
+    birthDate = new Date(birthDate);
+    diff = new Date(Date.now() - birthDate.getTime());
+    age = diff.getUTCFullYear() - 1970;
 
     return age >= 16;
 }
@@ -129,17 +133,17 @@ function getAge(dateStr) {
 function validate(lastName, firstName, email, sex, birthDate) {
 
     if (lastName == null || lastName == "") {
-        alert('Last name must not be empty.');
+        alert('Last name is required.');
         return false;
     }
 
     if (firstName == null || firstName == "") {
-        alert('First name must not be empty.');
+        alert('First name is required.');
         return false;
     }
 
     if (email == null || email == "") {
-        alert('Email must not be empty.');
+        alert('Email is required.');
         return false;
     } else {
 
@@ -155,7 +159,7 @@ function validate(lastName, firstName, email, sex, birthDate) {
         return false;
     }
 
-    if (birthDate == null) {
+    if (birthDate == null || birthDate == "") {
         alert('You must enter your birthdate.');
         return false;
     } else if (!getAge(birthDate)) {
@@ -164,4 +168,13 @@ function validate(lastName, firstName, email, sex, birthDate) {
     } 
 
     return true;
+}
+
+function clearModal() {
+    document.getElementById("last-name").value = '';
+    document.getElementById("first-name").value = '';
+    document.getElementById("email-input").value = '';
+    document.getElementById("gender-input").value = '';
+    document.getElementById("birthdate-input").value = '';
+    document.getElementById("picture-input").value = '';
 }
