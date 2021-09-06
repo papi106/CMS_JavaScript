@@ -1,4 +1,3 @@
-
 window.onload = () =>{
 
     document.getElementById("add-employee-button").addEventListener("click", AddEmployee, false);
@@ -41,7 +40,7 @@ function AppendTable(employee) {
     document.getElementById("table-employees").innerHTML += tableContent;
 }
 
-//Get employee in local storage
+//Get employee in local storage and populate the table
 function AddEmployee() {
     lastName = document.getElementById("last-name").value;
     firstName = document.getElementById("first-name").value;
@@ -60,6 +59,7 @@ function AddEmployee() {
     localStorage.setItem('employees', JSON.stringify(allEmployees));
 
     AppendTable(newEmployee);
+    deleteEmployee();
 }
 
 //Employee constructor
@@ -68,7 +68,7 @@ function Employee(employeeId, lastName, firstName, email, gender, birthDate, pic
     this.lastName = lastName;
     this.firstName = firstName;
     this.email = email;
-    this.birthDate = birthDate;
+    this.birthDate = moment(birthDate).format('D MMMM YYYY');
     this.gender = gender;
     this.picture= picture;
 }
