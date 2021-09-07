@@ -111,7 +111,7 @@ td {
   display: flex;
   justify-content: space-between;
   margin-right: 10.5%;
-  margin-left: 10.5%;
+  margin-left: 10%;
   margin-bottom: 0.5rem;
 }
 
@@ -130,7 +130,7 @@ td {
 
 .filter {
   display: flex;
-  margin-left: 10.5%;
+  margin-left: 10%;
   margin-bottom: 0.5rem;
 }
 

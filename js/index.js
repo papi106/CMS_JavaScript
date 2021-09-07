@@ -30,7 +30,7 @@ window.onload = () =>{
 //Put employee in table
 function AppendTable(employee) {
     tableContent = `<tr employee-id=${employee.employeeId}>
-    <td class="picture"><img src="/images/picture.png" height=80></td>
+    <td class="picture"></td>
     <td>${employee.lastName}</td>
     <td>${employee.firstName}</td>
     <td>${employee.email}</td>
