@@ -30,7 +30,7 @@ window.onload = () =>{
 //Put employee in table
 function AppendTable(employee) {
     tableContent = `<tr employee-id=${employee.employeeId}>
-    <td class="picture"></td>
+    <td><img src="${employee.picture}" class="picture"></td>
     <td>${employee.lastName}</td>
     <td>${employee.firstName}</td>
     <td>${employee.email}</td>
@@ -49,7 +49,7 @@ function AddEmployee() {
     email = document.getElementById("email-input").value;
     gender = document.getElementById("gender-input").value;
     birthDate = document.getElementById("birthdate-input").value;
-    picture = document.getElementById("picture").value;
+    picture = document.getElementById("imgPreview").src;
 
     validateForm = validate(lastName, firstName, email, gender, birthDate);
 
@@ -300,5 +300,21 @@ function searchEmployee() {
 }
 
 //Uploading the picture
+function showMyImage(fileInput) {
+    var imageFile = fileInput.files[0];
+    var img = document.getElementById("imgPreview");
+    var imageType = /image.*/;
+    if (imageFile.type.match(imageType)) {
+      img.file = imageFile;
+  
+      var reader = new FileReader();
+      reader.onload = (function (img) {
+        return function (e) {
+          img.src = e.target.result;
+        };
+      })(img);
+      reader.readAsDataURL(imageFile);
+    }
+  }
 
 //Filter functionalities

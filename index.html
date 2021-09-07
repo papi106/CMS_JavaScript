@@ -166,7 +166,9 @@
                     
                             <div class="mb-3">
                                 <label for="picture" class="form-label">Adauga poza</label>
-                                <input class="form-control" type="file" id="picture">
+                                <input class="form-control" type="file" id="picture" onchange="showMyImage(this)" accept="image/*">
+                                <br>
+                                <img id="imgPreview" src="/images/picture.png" height=150>
                             </div>
 
                         </form>
